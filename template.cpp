@@ -9,6 +9,7 @@
 #include <cstring>
 #include <ctime>
 #include <deque>
+#include <functional>
 #include <iomanip>
 #include <iostream>
 #include <list>
