@@ -21,7 +21,6 @@
 #include <string>
 #include <utility>
 #include <vector>
-//#include <cinttypes>
 using namespace std;
 
 #define s(n)                        scanf("%d",&n)
@@ -42,6 +41,7 @@ using namespace std;
 #define gcd                         __gcd
 
 #define forall(i,a,b)               for(int i=a;i<b;i++)
+#define forrall(i,a,b)              for(int i=a-1; i>=b; --i)
 #define foreach(v, c)               for( typeof( (c).begin()) v = (c).begin();  v != (c).end(); ++v)
 #define all(a)                      a.begin(), a.end()
 #define rall(a)                     a.rbegin(),a.rend()
@@ -84,6 +84,14 @@ typedef long double ld;
       #define trace6(a,b,c,d,e,f) 
 #endif
 
+inline int fri();
+inline long long int frll();
+
+ll addMOD(ll a, ll b);
+ll subtractMOD(ll a, ll b);
+ll multiplyMOD(ll a, ll b);
+
+
 void jibunNoSoln(int t)
 {
 
@@ -91,23 +99,95 @@ void jibunNoSoln(int t)
 
 int main()
 {
+    #ifdef SMALL
+        freopen("A-small-attempt0.in","rt",stdin);
+        freopen("A-small.out","wt",stdout);
+    #endif
+    #ifdef LARGE
+        freopen("A-large.in","rt",stdin);
+        freopen("A-large.out","wt",stdout);
+    #endif
 
-#ifdef SMALL
-  freopen("A-small-attempt0.in","rt",stdin);
-  freopen("A-small.out","wt",stdout);
-#endif
-#ifdef LARGE
-  freopen("A-large.in","rt",stdin);
-  freopen("A-large.out","wt",stdout);
-#endif
+    int t;
+    s(t);
+    forall(p,0,t)
+    {
+        printf("Case #%d: ",p+1);
+        jibunNoSoln(p+1);
+    }
 
-  int t;
-  s(t);
-  forall(p,0,t)
-  {
-    printf("Case #%d: ",p+1);
-    jibunNoSoln(p+1);
-  }
+    return 0;
+}
 
-  return 0;
+
+//***********************************************************//
+//******************** Utility Functions ********************//
+//***********************************************************//
+
+void initMOD(ll &a)
+{
+    if(a > MOD)
+        a %= MOD;
+}
+
+ll addMOD(ll a, ll b)
+{
+    ll c = a + b;
+    return (c < MOD ? c : c%MOD );
+}
+
+ll subtractMOD(ll a, ll b)
+{
+    ll c = a - b;
+    return (c < MOD ? c : c%MOD );
+}
+
+ll multiplyMOD(ll a, ll b)
+{
+    initMOD(a);
+    initMOD(b);
+
+    ll c = a * b;
+    return (c < MOD ? c : c%MOD );
+}
+
+inline long long int frll()
+{
+    register long long int c=getchar();
+    long long int x=0LL, neg=0LL;       //Bool neg is better?
+    for(; ((c<48LL || c>57LL) && c != '-' && c!=EOF); c = getchar());
+    if(c==EOF)
+        return EOF;
+    if(c=='-')
+    {
+        neg = 1LL;
+        c = getchar();
+    }
+    for(; c>47LL && c<58LL ; c = getchar()) 
+        x = (x<<1LL) + (x<<3LL) + c - 48LL;
+    if(neg)
+        x = -x;
+    
+    return x;
+}
+
+inline int fri()
+{
+    register int c=getchar();
+    int x=0, neg=0;                     //Bool neg is better?
+    for(; ((c<48 || c>57) && c != '-' && c!=EOF); c = getchar());
+    if(c==EOF)
+        return EOF;
+    if(c=='-')
+    {
+      neg = 1;
+      c = getchar();
+    }
+    for(; c>47 && c<58 ; c = getchar()) 
+      x = (x<<1) + (x<<3) + c - 48;
+
+    if(neg)
+        x = -x;
+    
+    return x;
 }
