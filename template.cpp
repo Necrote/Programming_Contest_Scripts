@@ -67,59 +67,6 @@ typedef vector<vector<int> > vvi;
 typedef long long ll;
 typedef long double ld;
 
-
-#ifdef DEBUG
-      #define trace1(x)           cerr<<__FUNCTION__<<":"<<__LINE__<<": "#x" = "<<x<<endl;
-      #define trace2(x,y)         cerr<<__FUNCTION__<<":"<<__LINE__<<": "#x" = "<<x<<" | "#y" = "<<y<<endl;
-      #define trace3(x,y,z)       cerr<<__FUNCTION__<<":"<<__LINE__<<": "#x" = "<<x<<" | "#y" = "<<y<<" | "#z" = "<<z<<endl;
-      #define trace4(a,b,c,d)     cerr<<__FUNCTION__<<":"<<__LINE__<<": "#a" = "<<a<<" | "#b" = "<<b<<" | "#c" = "<<c<<" | "#d" = "<<d<<endl;
-      #define trace5(a,b,c,d,e)   cerr<<__FUNCTION__<<":"<<__LINE__<<": "#a" = "<<a<<" | "#b" = "<<b<<" | "#c" = "<<c<<" | "#d" = "<<d<<" | "#e" = "<<e<<endl;
-      #define trace6(a,b,c,d,e,f) cerr<<__FUNCTION__<<":"<<__LINE__<<": "#a" = "<<a<<" | "#b" = "<<b<<" | "#c" = "<<c<<" | "#d" = "<<d<<" | "#e" = "<<e<<" | "#f" = "<<f<<endl;
-#else
-      #define trace1(x)           
-      #define trace2(x,y)         
-      #define trace3(x,y,z)       
-      #define trace4(a,b,c,d)     
-      #define trace5(a,b,c,d,e)   
-      #define trace6(a,b,c,d,e,f) 
-#endif
-
-inline int fri();
-inline long long int frll();
-
-ll addMOD(ll a, ll b);
-ll subtractMOD(ll a, ll b);
-ll multiplyMOD(ll a, ll b);
-
-
-void jibunNoSoln(int t)
-{
-
-}
-
-int main()
-{
-    #ifdef SMALL
-        freopen("A-small-attempt0.in","rt",stdin);
-        freopen("A-small.out","wt",stdout);
-    #endif
-    #ifdef LARGE
-        freopen("A-large.in","rt",stdin);
-        freopen("A-large.out","wt",stdout);
-    #endif
-
-    int t;
-    s(t);
-    forall(p,0,t)
-    {
-        printf("Case #%d: ",p+1);
-        jibunNoSoln(p+1);
-    }
-
-    return 0;
-}
-
-
 //***********************************************************//
 //******************** Utility Functions ********************//
 //***********************************************************//
@@ -190,4 +137,47 @@ inline int fri()
         x = -x;
     
     return x;
+}
+
+#ifdef DEBUG
+      #define trace1(x)           cerr<<__FUNCTION__<<":"<<__LINE__<<": "#x" = "<<x<<endl;
+      #define trace2(x,y)         cerr<<__FUNCTION__<<":"<<__LINE__<<": "#x" = "<<x<<" | "#y" = "<<y<<endl;
+      #define trace3(x,y,z)       cerr<<__FUNCTION__<<":"<<__LINE__<<": "#x" = "<<x<<" | "#y" = "<<y<<" | "#z" = "<<z<<endl;
+      #define trace4(a,b,c,d)     cerr<<__FUNCTION__<<":"<<__LINE__<<": "#a" = "<<a<<" | "#b" = "<<b<<" | "#c" = "<<c<<" | "#d" = "<<d<<endl;
+      #define trace5(a,b,c,d,e)   cerr<<__FUNCTION__<<":"<<__LINE__<<": "#a" = "<<a<<" | "#b" = "<<b<<" | "#c" = "<<c<<" | "#d" = "<<d<<" | "#e" = "<<e<<endl;
+      #define trace6(a,b,c,d,e,f) cerr<<__FUNCTION__<<":"<<__LINE__<<": "#a" = "<<a<<" | "#b" = "<<b<<" | "#c" = "<<c<<" | "#d" = "<<d<<" | "#e" = "<<e<<" | "#f" = "<<f<<endl;
+#else
+      #define trace1(x)           
+      #define trace2(x,y)         
+      #define trace3(x,y,z)       
+      #define trace4(a,b,c,d)     
+      #define trace5(a,b,c,d,e)   
+      #define trace6(a,b,c,d,e,f) 
+#endif
+
+void jibunNoSoln(int t)
+{
+
+}
+
+int main()
+{
+    #ifdef SMALL
+        freopen("A-small-attempt0.in","rt",stdin);
+        freopen("A-small.out","wt",stdout);
+    #endif
+    #ifdef LARGE
+        freopen("A-large.in","rt",stdin);
+        freopen("A-large.out","wt",stdout);
+    #endif
+
+    int t;
+    s(t);
+    forall(p,0,t)
+    {
+        printf("Case #%d: ",p+1);
+        jibunNoSoln(p+1);
+    }
+
+    return 0;
 }
